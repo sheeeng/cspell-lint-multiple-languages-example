@@ -1,0 +1,1 @@
+# cspell-lint-multiple-languages-example
