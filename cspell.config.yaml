@@ -1,0 +1,35 @@
+---
+version: "0.2"
+language: en,no
+caseSensitive: true
+# List of words to be always considered correct.
+words:
+  - githubusercontent
+# List of flag words to be always considered incorrect.
+# This is useful for offensive words and common spelling errors.
+# For example "hte" should be "the".
+flagWords:
+  - hte
+dictionaryDefinitions:
+  - name: custom-words
+    path: ./.cspell/custom-words.txt
+    addWords: true
+dictionaries:
+  - en_US
+  - no_NB
+  - custom-words
+  - lorem-ipsum
+languageSettings:
+  - languageId: markdown
+    locale: "*"
+    caseSensitive: true
+    ignoreRegExpList:
+      - ":[a-z_]+:" # Exclude emojis.
+      - "/^\\s*```[\\s\\S]*?^\\s*```/gm" # Exclude code block.
+  - languageId: javascript
+    caseSensitive: false
+ignorePaths:
+  - "node_modules/**"
+useGitignore: true
+features:
+  weighted-suggestions: true

@@ -1,0 +1,17 @@
+name: Spell Check
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    paths:
+      - ".github/workflows/spell-check.yaml"
+      - "**/*.md"
+
+jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - run: |
+          npx --yes cspell lint **/*.md
