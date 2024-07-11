@@ -1,31 +1,40 @@
 ---
 version: "0.2"
-language: en,no
+language: en,nb
 caseSensitive: true
+import:
+  - https://cdn.jsdelivr.net/npm/@cspell/dict-nb-no@latest/cspell-ext.json
 # List of words to be always considered correct.
 words:
   - githubusercontent
+# cspell:disable
 # List of flag words to be always considered incorrect.
 # This is useful for offensive words and common spelling errors.
 # For example "hte" should be "the".
 flagWords:
   - hte
+# cspell:enable
 dictionaryDefinitions:
   - name: custom-words
     path: ./.cspell/custom-words.txt
     addWords: true
 dictionaries:
-  - en_US
-  - no_NB
   - custom-words
   - lorem-ipsum
 languageSettings:
   - languageId: markdown
     locale: "*"
     caseSensitive: true
+    patterns:
+      - name: markdown-code-block
+        pattern: >-
+          /^(\s*?```+)[\s\S]*?\1/gm
+      - name: markdown-emoji
+        pattern: >-
+          /:[a-z_]+:/g
     ignoreRegExpList:
-      - ":[a-z_]+:" # Exclude emojis.
-      - "/^\\s*```[\\s\\S]*?^\\s*```/gm" # Exclude code block.
+      - markdown-emoji
+      - markdown-code-block
   - languageId: javascript
     caseSensitive: false
 ignorePaths:
