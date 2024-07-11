@@ -1,9 +1,10 @@
 ---
 version: "0.2"
-language: en,nb
+language: en,nb,vi
 caseSensitive: true
 import:
   - https://cdn.jsdelivr.net/npm/@cspell/dict-nb-no@latest/cspell-ext.json
+  - https://cdn.jsdelivr.net/npm/@cspell/dict-vi-vn@latest/cspell-ext.json
 # List of words to be always considered correct.
 words:
   - githubusercontent
