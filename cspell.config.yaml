@@ -33,9 +33,13 @@ languageSettings:
       - name: markdown-emoji
         pattern: >-
           /:[a-z_]+:/g
+      - name: markdown-strangedomain-link
+        pattern: >
+          /([^\s]*\.)?strangedomain\.io\b/g
     ignoreRegExpList:
       - markdown-emoji
       - markdown-code-block
+      - markdown-strangedomain-link
   - languageId: javascript
     caseSensitive: false
 ignorePaths:
